@@ -42,19 +42,19 @@ this so Melissa appears before Ava?
 
 console.log(findIndex("Ava")); //prints 1
 
-function budgeInLine(name){
-  return rideLine.splice(1, 0, name);
+function budgeInLine(index, name){
+  return rideLine.splice(index, 0, name);
 }
-budgeInLine("Melissa");
+budgeInLine(1, "Melissa");
 console.log(rideLine); //prints ["Vivian", "Melissa", "Ava", "Josh", "Patrick", "Mike", "Mary"]
 
 
 f) If Patrick wants to leave the line, how would you delete him from the array?
 
-function remove4thIndex(){
-  return rideLine.splice(4, 1);
+function leaveLine(index){
+  return rideLine.splice(index, 1);
 }
-console.log(remove4thIndex()); //prints "Patrick"
+console.log(leaveLine(4)); //prints "Patrick"
 console.log(rideLine); ["Vivian", "Melissa", "Ava", "Josh", "Mike", "Mary"]
 
 
@@ -62,7 +62,7 @@ console.log(rideLine); ["Vivian", "Melissa", "Ava", "Josh", "Mike", "Mary"]
 
 
 A real world example is a baseball coach submitting their team's batting lineup.
-One can use an array data structure to model the players batting order.  
+One can use an array data structure to model the players batting order.
 
 
 3. How would your data structure allow developers to access and manipulate the data?
