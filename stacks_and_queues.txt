@@ -1,0 +1,140 @@
+Exercises
+
+1. What is the main difference between a stack and a queue?
+
+Stack data structures implement a Last In First Out way of handling data and requests.  A real world
+example would be if a teacher tells students to put their tests in a pile on his desk when they
+complete the test.  When all tests have been turned in the teacher starts grading the tests beginning
+with the top of the pile(stack) until all tests have been graded.
+
+Queue data structures utilize a Fist In First Out approach to handling data and requests.  This is
+a standard waiting in line approach.  Whoever made the request 1st, gets their request handled first.
+Whoever made the request second, gets their request handled second.  A real world analogy here would
+be, a teacher is only allowed to permit one student at a time to leave class to use the bathroom.
+Five students ask to use the bathroom.  The teacher permits the students to use the bathroom in the
+order in which the students asked.  First student goes first.  Students 2, 3, 4, and 5 are in the queue
+waiting for their turn.  When student 1 comes back from the bathroom, that student is removed from
+the line and everyone in the queue moves up 1 place. The order goes from [0, 1, 2, 3, 4] to [0, 1, 2, 3].
+
+2. What are the similarities between stacks and queues?
+
+Stacks and queues are both data structures.  They are both ways of handling multiple data elements
+in a systematic way.
+
+
+3. Imagine you are an engineer tasked with implementing the UNDO and REDO options in a
+word processor such as Microsoft Word. Which data structure would you use for each option and why?
+
+The UNDO action would be a stack data structure because you want UNDO to reverse the
+last change that was made in the document.
+
+The REDO action would be a stack data structure of all the UNDOs that have been executed.  The purpose
+of this action is to reimplement the changes made starting with the last change that was undone.
+
+
+Programming Questions
+You may program the following question in any language of your choice. Before you begin coding,
+write out a plan as to how you will solve the question.
+
+1. Given a string, reverse it using a stack.
+For example, the string "Bloc!" should be converted to "!colB".
+
+Create function to reverse strings
+First push() each letter of the string into an array.
+Next push() each element of the array back into a string using a while loop.
+Return the reversed string
+
+function reverse(str) {
+    var stack = [];
+    for (var i = 0; i < str.length; i++) {
+        stack.push(str[i]);
+    }
+    var reverseStr = '';
+    while (stack.length > 0) {
+        reverseStr += stack.pop();
+    }
+  return reverseStr;
+}
+console.log(reverse('Bloc!')); //"!colB"
+
+
+2. Implement the pop method of a stack using one queue. Make a FIFO data structure mirror the
+functionality of a LIFO data structure. Since the internal list is not the same as defined in
+the checkpoint, it may help to rewrite the pseudocode first.
+
+//For this you'll create a `Queue` data structure, and build a `.pop()` method inside that behaves the same as the `.pop()` method of a `Stack`.  The key here is to keep in mind that we can _*ONLY*_ remove the *first* item in a queue, one-at-a-time.  Whereas, in a Stack the we return the last item added, in a Queue we return the first item added.  So what this question wants is for a `.pop()` method to be created that will remove the last item in the queue, and return it.  We will need to do t////that while maintaining the structure as a true `Queue`--meaning we can only take the first item, and have to traverse the entire queue in order to reach that last item we want to remove.
+
+FUNCTION reverseQueue
+SET queue
+REVERSE queue order with decrementing FOR LOOP
+REMOVE FIRST Element from array with pop() and RETURN it to queue
+RETURN queue
+END FUNCTION
+
+
+let array1 = [1, 2, 3, 4]
+function reverseQueue(array){
+ let queue = [];
+  for (i = array.length; i >= 0; i--){
+ queue = array.pop(i);
+  return queue;
+}
+}
+
+console.log(reverseQueue(array1)); //prints 4
+console.log(array1); //prints [1, 2, 3]
+console.log(reverseQueue(array1)); //prints 3
+console.log(array1); // [1, 2]
+console.log(reverseQueue(array1)); //prints 2
+console.log(array1); //prints [1]
+console.log(reverseQueue(array1)); //prints 1
+
+
+
+
+To delete an item, take all of the elements in the queue one at a time and put them at the end
+of the queue, except for the last one which should be removed and returned.
+
+
+1. Implement the enqueue and dequeue methods defined in the checkpoint inside your own Queue class.
+
+FUNCTION enqueue(element)
+  APPEND element to the end of the list
+END FUNCTION
+
+FUNCTION dequeue
+  SET temp to the first element
+  REMOVE FIRST element of list from list
+  RETURN temp
+END FUNCTION
+
+class Queue{
+  constructor(){
+    this.items = [];
+  }
+    enqueue(element){
+    return this.items.push(element);
+    }
+    dequeue(){
+    if(this.isEmpty())
+      return "Empty";
+    return this.items.shift();
+    }
+    isEmpty(){
+      return this.items.length == 0;
+    }
+}
+
+var numbers = new Queue;
+
+numbers.dequeue();
+console.log(numbers.dequeue()); //prints "Empty"
+
+numbers.enqueue(2);
+numbers.enqueue(4);
+numbers.enqueue(6);
+numbers.enqueue(8);
+console.log(numbers.items); //prints [2, 4, 6, 8]
+
+numbers.dequeue();
+console.log(numbers.items); //prints [4, 6, 8]
