@@ -1,0 +1,91 @@
+1. Using proper pseudo-code, describe the following primitive algorithms:
+
+- Making coffee;
+
+1. Take the grinder out of the top of the coffee pot (this is for a Grind and Brew Coffee pot!).
+2. Place coffee beans in the grinder until the beans cover the blades
+3. Put the grinder back into the coffee pot.
+4. Place one coffee filter in the filter basket.
+5. Fill the coffee pot with 4 cups of water in the top water container.
+6. When you are ready for your coffee, press the "on" button.
+7. Wait for coffee to finish brewing.
+8. When machine beeps, pour yourself some coffee and enjoy!
+
+
+- Washing dishes;
+
+1. Separate dishes by type of dish (plates, bowls, cups, utensils, etc.)
+2. WHILE there are unclean dishes
+  3. Rinse and scrub off stuck on food particles form item.
+    4. IF item is dishwasher safe
+      Place item in the dishwasher.
+    ELSE wash item by hand and place in the drying rack.
+    END IF
+5. ENDWHILE
+6. Dry items in the drying rack with a clean towel and put away.
+7. IF the dishwasher is full
+    FILL the dishwasher with detergent and run cleaning cycle.
+  ELSE you are finished!
+  END IF
+
+- A choice of your own:   Making BBQ Chicken Wings on the grill;
+
+1. Spray grill grates with non-stick grilling spray.
+2. Place 2 tablespoons of cooking oil on 2 dozen chicken wings (I recommend buying the chicken wings that are already separated).
+  3. Rub oil on chicken wings to even distribute.
+  4. IF wings are not fully covered add 1 more Tablespoon of cooking oil.
+  ELSE move on to next step.
+5. Turn on grill and preheat to 350 degrees Fahrenheit.
+6. Place wings on the grill.  Do not overlap the wings.
+7. SET timer for 9 minutes.
+8. While the wings are cooking, place 1 - 2 cups of BBQ sauce in a large bowl with a lid.
+9. When timer goes off, turn the wings over and cook for 9 more minutes.
+10. After timer goes off again, place wings in the bowl of BBQ sauce,
+secure lid and shake to even distribute BBQ sauce.
+11. Let wings sit covered for 5 minutes.
+12. Enjoy the wings.  You'll probably need some extra napkins.
+
+
+
+2. As with the knot algorithm, there may be more than one way to solve the problem.
+It is essential to try to pick the best algorithm for a situation. Name three companies
+who created an algorithm that made them successful, e.g., Google's search algorithm.
+It doesn't need to be a tech example (such as a recipe or manufacturing a product).
+Google's algorithm produces more relevant results than other search engines; what about
+each of your cases make them stand out?
+
+1. Facebook: Facebook social networking algorithms have made them extremely popular.
+The way people are able to connect with others and customize what they see has made
+Facebook a favorite among many people.
+
+2. Alabama NCAA Football team: the Alabama football team has consistently been one of the top
+college football teams for the past 10 years.  It has won 5 national championships in that time.
+Their algorithm or formula for constructing a team has been very effective.  They focus on having
+the biggest, strongest and fastest players on the offensive and defensive line which helps them
+control the pace of the game.  It allows their skill players on offense score more easily.  It
+allows their defense to stop the other team more effectively.  This algorithm has translated into
+many wins.
+
+3. Vanguard:  Vanguard is a popular financial institution.  Their algorithm/approach to investing
+has set them apart from other investment firms.  Instead of having financial advisors trying to
+pick which individual stocks/bonds will give excellent returns in the market, their approach is
+to invest in index funds that own large portions of the market (like the S&P 500).  These index funds
+are able to match the market's return.  Their philosophy is that very few financial advisors are able
+to actively beat the return of the S&P 500 over an extended period of time (10, 20, 30 years).
+So instead of paying high fees to actively manage accounts, they lower their fees more than the competition,
+and tend to get better returns for their clients by matching the returns of the market.
+
+
+
+3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+
+An efficient algorithm is an algorithm that executes its purpose in the fastest way possible.
+Algorithm efficiency is measured by the average execution time necessary for the algorithm to complete
+the complete work on a set of data. An example is I can get to my neighbor's house two ways.
+First, I can get to their house by walking directly from my house to their house.  Second, I can go
+the other direction, walk all the way around the block, and then arrive at their house.
+Both ways will get me to their house, but the first way is much more efficient. It is better to use
+the most efficient algorithm because as a project grows, it becomes easier to scale when you are using
+the most efficient algorithms.  If you are only dealing with 100 data points, it might not be a big
+deal to have a less efficient algorithm, but if you are dealing with 1,000 or 100,000 or 1,000,000
+data points the inefficiency will grow exponentially causing more problems.
