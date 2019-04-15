@@ -53,25 +53,25 @@ Johnny starts saving for retirement in his early 20s. He is able to receive a 10
 on his investments. He saves $10,950 a year.
 
 After 10 years
-  - w/ compound interest  $109,500
-  - w/o compound interest $184,360
+- w/o compound interest  $109,500
+- w/ compound interest   $184,360
 
 After 20 years
-- w/ compound interest  $219,000
-- w/o compound interest $683,432
+- w/o compound interest $219,000
+- w/  compound interest $683,432
 
 After 30 years
-- w/ compound interest    $328,500
-- w/o compound interest $2,034,439
+- w/o compound interest  $328,500
+- w/ compound interest $2,034,439
 
 After 40 years
-- w/ compound interest    $438,000
-- w/o compound interest $5,691,672
+- w/o compound interest  $438,000
+- w/ compound interest $5,691,672
 
 Johnny really likes his work so he works another 10 years...
 After 50 years
-- w/ compound interest     $547,500
-- w/o compound interest $15,591,952      Go, Johnny! Go!
+- w/o compound interest   $547,500
+- w/ compound interest $15,591,952      Go, Johnny! Go!
 
 
 
