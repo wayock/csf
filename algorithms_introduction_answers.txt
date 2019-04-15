@@ -2,48 +2,44 @@
 
 - Making coffee;
 
-1. Take the grinder out of the top of the coffee pot (this is for a Grind and Brew Coffee pot!).
-2. Place coffee beans in the grinder until the beans cover the blades
-3. Put the grinder back into the coffee pot.
-4. Place one coffee filter in the filter basket.
-5. Fill the coffee pot with 4 cups of water in the top water container.
-6. When you are ready for your coffee, press the "on" button.
-7. Wait for coffee to finish brewing.
-8. When machine beeps, pour yourself some coffee and enjoy!
+SET Make coffee
+INIT filter in basket
+WHILE coffee grounds are less than 8 tablespoons
+  INCREMENT 1 tablespoon of coffee grounds in filter
+END WHILE
+WHILE water level is less than 16oz
+  INCREMENT water in water container
+END While
+CALL Make Coffee
 
 
 - Washing dishes;
 
-1. Separate dishes by type of dish (plates, bowls, cups, utensils, etc.)
-2. WHILE there are unclean dishes
-  3. Rinse and scrub off stuck on food particles form item.
-    4. IF item is dishwasher safe
+
+WHILE there are unclean dishes
+  Rinse and scrub off stuck on food particles form item.
+    IF item is dishwasher safe
       Place item in the dishwasher.
-    ELSE wash item by hand and place in the drying rack.
-    END IF
-5. ENDWHILE
-6. Dry items in the drying rack with a clean towel and put away.
-7. IF the dishwasher is full
-    FILL the dishwasher with detergent and run cleaning cycle.
-  ELSE you are finished!
-  END IF
+    ELSE
+      Wash item by hand and place in the drying rack.
+    ENDIF
+ENDWHILE
+
 
 - A choice of your own:   Making BBQ Chicken Wings on the grill;
 
-1. Spray grill grates with non-stick grilling spray.
-2. Place 2 tablespoons of cooking oil on 2 dozen chicken wings (I recommend buying the chicken wings that are already separated).
-  3. Rub oil on chicken wings to even distribute.
-  4. IF wings are not fully covered add 1 more Tablespoon of cooking oil.
-  ELSE move on to next step.
-5. Turn on grill and preheat to 350 degrees Fahrenheit.
-6. Place wings on the grill.  Do not overlap the wings.
-7. SET timer for 9 minutes.
-8. While the wings are cooking, place 1 - 2 cups of BBQ sauce in a large bowl with a lid.
-9. When timer goes off, turn the wings over and cook for 9 more minutes.
-10. After timer goes off again, place wings in the bowl of BBQ sauce,
-secure lid and shake to even distribute BBQ sauce.
-11. Let wings sit covered for 5 minutes.
-12. Enjoy the wings.  You'll probably need some extra napkins.
+SET grill to 350 degrees Fahrenheit.
+IF grill is less than 350 degrees
+  Wait more
+ELSE
+  Place wings on grill
+ENDIF
+IF time is less than 9 minutes
+  Keep wings on grill
+ELSE
+  Flip wings and cook for another 9 minutes
+ENDIF
+
 
 
 
