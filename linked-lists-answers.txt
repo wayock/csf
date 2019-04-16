@@ -1,0 +1,67 @@
+Exercises
+
+1. What are some pros and cons of using linked lists instead of arrays?
+
+Pros: Linked lists use less memory.  As linked lists grow larger, they do not require as much memory space as
+arrays.  This is because each node is independent in memory, so the operating system may use any
+available memory location to store it.  Node memory independence allows linked lists to easily grow to
+immense sizes. When arrays grow larger, they require consecutive locations in memory.
+Adding elements to the middle of a linked list does not require shifting many of the other elements in
+the array.  If you want to insert an element in the middle of an array, half of the elements will need
+to shift.
+
+Cons: One of the biggest cons to linked lists is searching for elements.  Because there is no indexing
+in a linked lists, one cannot simple search for an element's index.  Instead one has to begin one's search
+in the head or first node.  Starting with the head, elements must be accessed in order.
+Another con is when you insert nodes you will need to make sure you properly link a previous node to the
+inserted node and have the inserted node link to the next node as to not leave any nodes orphaned.  Same
+when deleting a node.  You have to make sure the node that links to the deleted node has its link
+updated to reference the node that the deleted node linked to.
+
+
+
+
+2. Come up with a real world example of a linked list.
+
+A real world example of a linked list is a teacher decides to take 10 students on a field trip to
+see a movie.  The group is unable to sit all together so it is difficult for the teacher to give
+instructions to each student individually.  The teacher needs to tell Johnny his mom is there to pick him
+up early for a doctor's appointment. Instead of the teacher getting up and telling Johnny
+directly, the teacher tells the first student the instructions and tells that student to pass on the
+information to the next student until eventually the information gets to Johnny and he can leave with
+mom to get to his doctor's appointment.
+
+Programming Questions
+
+You may program the following questions in any language of your choice (JavaScript, Ruby, etc.).
+
+Before beginning to code, write out a plan explaining how to solve the question.
+
+
+1. The linked list push function should take a value, create a node, and add it to the end of a list.
+Below is pseudocode for a push function for a singly linked list. However, there is something wrong
+with it. Submit both an explanation of the bug and a functional implementation of the method.
+
+FUNCTION push(element)
+CREATE node
+SET node.value TO element
+SET node.next TO null
+
+IF the head node does not exist
+ THEN SET head to node
+ELSE
+ SET current to head
+ SET current.next to node
+END IF
+END FUNCTION
+
+
+2. Given an unsorted singly linked list, remove all duplicates from the linked list.
+Example
+Input: a -> c -> d -> d -> a
+Output: a -> c -> d
+
+3. Given an unsorted singly linked list, reverse it.
+Example
+Input: a -> b -> c -> d
+Output: d -> c -> b -> a
