@@ -51,9 +51,13 @@ IF the head node does not exist
  THEN SET head to node
 ELSE
  SET current to head
- SET current.next to node
+ SET current.next to null // change node to null
 END IF
 END FUNCTION
+If you're using a push function to add something to the end of a linked list.
+It could only be the head node if you're adding it to an empty linked list.  Then the
+`SET current.next to node` should be  `SET current.next to null`
+
 
 
 function LinkedList(){
@@ -70,7 +74,66 @@ function LinkedList(){
   };
 
   this.head = function(){
-    return head;
+    return head.element;
+  };
+
+  this.add = function(element){
+    var node = new Node(element);
+    if(head === null){
+      head = node;
+    } else {
+      var currentNode = head;
+      while(currentNode.next){
+        currentNode = currentNode.next;
+      }
+      currentNode.next = node;
+    }
+    length++;
+  };
+
+  this.log = function(){
+    var currentNode = head;
+    while (currentNode) {
+       console.log(currentNode.element);
+       currentNode = currentNode.next
+    }
+ };
+}
+
+var evenNumbers = new LinkedList();
+evenNumbers.add('two');
+evenNumbers.add('four');
+evenNumbers.add('six');
+evenNumbers.add('eight');
+console.log(evenNumbers.size()); //prints 4
+evenNumbers.log(); /* prints
+"two"
+"four"
+"six"
+"eight"*/
+
+
+
+2. Given an unsorted singly linked list, remove all duplicates from the linked list.
+Example
+Input: a -> c -> d -> d -> a
+Output: a -> c -> d
+
+function LinkedList(){
+  var length = 0;
+  var head = null;
+
+  var Node = function(element){
+    this.element = element;
+    this.next = null;
+  };
+
+  this.size = function(){
+    return length;
+  };
+
+  this.head = function(){
+    return head.element;
   };
 
   this.add = function(element){
@@ -90,39 +153,156 @@ function LinkedList(){
     length++;
   };
 
-  this.remove = function(element){
-    var currentNode = head;
-    var previousNode;
-    if(currentNode.element === element){
-      head = currentNode.next;
-    } else {
-      while(currentNode.element !== element){
-        previousNode = currentNode;
-        currentNode = currentNode.next;
-      }
+   this.log = function(){
+     var currentNode = head;
+     while (currentNode) {
+        console.log(currentNode.element);
+        currentNode = currentNode.next
+     }
+  };
 
-      length --;
-    };
-  }
+  this.removeDuplicates = function () {
+    // Empty or a single element Linked List
+    if (!head || !head.next) {
+      console.log('No duplicates were found.');
+      return;
+    }
+
+    var p1;
+    var p2;
+    var nodes = {};
+
+    p1 = head;
+    p2 = p1.next;
+    nodes[p1.element] = true;
+
+    while (p2) {
+        var element = p2.element;
+        if (nodes[element]) {
+            p1.next = p2.next;
+            length--
+        } else {
+            nodes[element] = true;
+            p1 = p2;
+        }
+        p2 = p2.next;
+    }
+}
 }
 
-var evenNumbers = new LinkedList();
-evenNumbers.add('two');
-evenNumbers.add('four');
-evenNumbers.add('six');
-evenNumbers.add('eight');
-evenNumbers.remove('six');
-console.log(evenNumbers.size()); //prints 3
-console.log(evenNumbers); //prints the whole LinkedList function but not evenNumbers nodes
 
+var letters = new LinkedList();
+letters.add('a');
+letters.add('c');
+letters.add('d');
+letters.add('d');
+letters.add('a');
 
+letters.log(); /* "a"
+"c"
+"d"
+"d"
+"a"*/
 
-2. Given an unsorted singly linked list, remove all duplicates from the linked list.
-Example
-Input: a -> c -> d -> d -> a
-Output: a -> c -> d
+console.log(letters.size()); //prints 5
+letters.removeDuplicates()
+
+letters.log(); /* prints /* "a"
+"c"
+"d"*/
+console.log(letters.size()); //prints 3
+
+// note to self - helpful resources on linked lists:
+// https://js-algorithms.tutorialhorizon.com/2015/10/04/remove-duplicates-from-an-unsorted-linked-list/
+// https://humanwhocodes.com/blog/2019/01/computer-science-in-javascript-linked-list/
+//free code camp video: https://www.youtube.com/watch?v=9YddVVsdG5A
+
 
 3. Given an unsorted singly linked list, reverse it.
 Example
 Input: a -> b -> c -> d
 Output: d -> c -> b -> a
+
+var Node = function(element){
+   this.element = element;
+   this.next = null;
+ };
+
+function LinkedList(){
+ var length = 0;
+ var head = null;
+
+ this.add = function(element){
+   var node = new Node(element);
+   if(head === null){
+     head = node;
+   } else {
+     var currentNode = head;
+
+     while(currentNode.next){
+       currentNode = currentNode.next;
+     }
+
+     currentNode.next = node;
+   }
+
+   length++;
+ };
+
+  this.log = function(){
+    var currentNode = head;
+    while (currentNode) {
+       console.log(currentNode.element);
+       currentNode = currentNode.next
+    }
+ };
+
+
+ this.reverse = function() {
+ let currentNode = head,
+     previous = null,
+     tmp;
+
+ while (currentNode) {
+
+   tmp = currentNode.next;
+
+
+   currentNode.next = previous;
+
+
+   previous = currentNode;
+   currentNode = tmp;
+
+ }
+ head = previous;
+}
+}
+
+
+
+var letters = new LinkedList();
+
+letters.add('a');
+letters.add('b');
+letters.add('c');
+letters.add('d');
+
+letters.log(); /* prints
+"a"
+"b"
+"c"
+"d" */
+
+letters.reverse();
+
+letters.log() /* prints
+"d"
+"c"
+"b"
+"a"
+*/
+
+
+
+//note to self - helpful video on how to Reverse a Linked List https://www.loom.com/share/533a9a79c01f4e2d9edee8812e237f2b
