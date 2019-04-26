@@ -40,7 +40,7 @@ each with an identifier.
 
 5. Determine whether you would use a hash table or an object to store each of the following pieces of data:
   - A list of pets and their unique names.
-      object
+      hash table
 
   - The name, age, and the birthday of your best friend.
       object

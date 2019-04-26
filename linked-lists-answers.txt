@@ -167,7 +167,6 @@ function LinkedList(){
       console.log('No duplicates were found.');
       return;
     }
-
     var p1;
     var p2;
     var nodes = {};
