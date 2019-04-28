@@ -305,3 +305,4 @@ letters.log() /* prints
 
 
 //note to self - helpful video on how to Reverse a Linked List https://www.loom.com/share/533a9a79c01f4e2d9edee8812e237f2b
+// link JavaScript: Reverse a Linked List https://wsvincent.com/javascript-reverse-linked-list/
